@@ -28,25 +28,11 @@ function retornoitau_config() {
 }
 
 function retornoitau_activate() {
-
-    # Create Custom DB Table
-    $query = "CREATE TABLE `mod_retornoitau` (`id` INT( 1 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,`chave` TEXT NOT NULL )";
-    $result = full_query($query);
-
-    $table = "mod_retornoitau";
-    $values = array("id"=>1,"chave"=>null);
-    $newid = insert_query($table,$values);
-
     # Return Result
     return array('status'=>'success','description'=>'Módulo ativado com sucesso');
 }
 
 function retornoitau_deactivate() {
-
-    # Remove Custom DB Table
-    $query = "DROP TABLE `mod_retornoitau`";
-    $result = full_query($query);
-
     # Return Result
     return array('status'=>'success','description'=>'Módulo desativado com sucesso');
 }
