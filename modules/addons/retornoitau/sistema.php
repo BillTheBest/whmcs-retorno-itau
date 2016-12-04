@@ -51,7 +51,7 @@ if ($_POST && $_FILES['arquivo']['error'] != 0) {
 	
 				// Se o valor pago for maior que o faturado registra como juros
 				if ($valor > $invoice["subtotal"] && $vars['option2'] == "on") {
-					$multa = $valor - $invoice["subtotal"];
+				    $multa = $valor - $invoice["subtotal"];
 				    $command = "updateinvoice";
 				    $values["invoiceid"] = $documento;
 				    $values["newitemdescription"] = array("Juros / Multa");
@@ -65,12 +65,12 @@ if ($_POST && $_FILES['arquivo']['error'] != 0) {
 				    $values["invoiceid"] = $documento;
 				    $values["transid"] = "ITAU-".$documento;
 				    $values["amount"] = $valor;
-					$values["fees"] = $tarifa;
-					$values["date"] = $data . " 00:00:00";
+				    $values["fees"] = $tarifa;
+				    $values["date"] = $data . " 00:00:00";
 				    $values["gateway"] = "boletoitau";
 				    $results = localAPI($command,$values);
 		
-					$invoice["status"] = "Pagamento processado";
+				    $invoice["status"] = "Pagamento processado";
 				}
 				$consultacliente = "S";
 			} elseif ($invoice["status"] == "error") {
@@ -85,9 +85,9 @@ if ($_POST && $_FILES['arquivo']['error'] != 0) {
 			    $command = "getclientsdetails";
 			    $values["clientid"] = $invoice["userid"];
 			    $clientedados = localAPI($command,$values);					
-				$cliente = $clientedados["fullname"] . " - " . $clientedados["companyname"];
+			    $cliente = $clientedados["fullname"] . " - " . $clientedados["companyname"];
 			} else {
-				$cliente = "---";
+			    $cliente = "---";
 			}
 
 			$retorno[] = array("documento"=>$documento,"valor"=>$valor,"tarifa"=>$tarifa,"status"=>$invoice["status"],"cliente"=>$cliente,"data"=>$data);
