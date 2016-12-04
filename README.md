@@ -2,6 +2,8 @@
 
 Sistema para processamento de retorno de boletos Banco ITAÚ
 
+Homologado nas carteiras 157 e 175
+
 # INSTALACAO #
 
 1. Fazer o upload dos arquivos para seu whmcs seguindo a estrutura de diretórios da pasta WHMCS.
