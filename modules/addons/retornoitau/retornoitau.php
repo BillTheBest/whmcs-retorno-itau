@@ -33,9 +33,9 @@ function retornoitau_activate() {
     $query = "CREATE TABLE `mod_retornoitau` (`id` INT( 1 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,`chave` TEXT NOT NULL )";
     $result = full_query($query);
 
-	$table = "mod_retornoitau";
-	$values = array("id"=>1,"chave"=>null);
-	$newid = insert_query($table,$values);
+    $table = "mod_retornoitau";
+    $values = array("id"=>1,"chave"=>null);
+    $newid = insert_query($table,$values);
 
     # Return Result
     return array('status'=>'success','description'=>'Módulo ativado com sucesso');
@@ -66,6 +66,6 @@ function retornoitau_output($vars) {
     $option5 = $vars['option5'];
     $LANG = $vars['_lang'];
 	
-	// Para maior organização aqui é feito o include da classe
-	require_once(dirname(__FILE__) . "/sistema.php");
+    // Para maior organização aqui é feito o include da classe
+    require_once(dirname(__FILE__) . "/sistema.php");
 }
